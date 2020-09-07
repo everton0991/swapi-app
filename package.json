@@ -21,6 +21,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "test:staged": "react-scripts test ----passWithNoTests",
     "eject": "react-scripts eject",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx ./src"
   },
@@ -52,6 +53,8 @@
     "eslint-plugin-react": "^7.20.3",
     "eslint-plugin-react-hooks": "^4.0.8",
     "git-commit-msg-linter": "^2.6.0",
+    "husky": "^4.3.0",
+    "lint-staged": "^10.3.0",
     "prettier": "^2.1.1"
   }
 }

@@ -1,0 +1,7 @@
+{
+  "*.{ts, tsx}": [
+    "yarn prettier-format",
+    "eslint 'src/**' --fix",
+    "yarn test:staged"
+  ]
+}

@@ -5,6 +5,11 @@
     "project": "./tsconfig.json"
   },
   "rules": {
-    "comma-dangle": ["error", "never"]
+    "comma-dangle": ["error", "never"],
+    "import/prefer-default-export": 0,
+    "import/extensions": 0,
+    "react/require-default-props": 0,
+    "react/prop-types": 0,
+    "react/jsx-one-expression-per-line": 0
   }
 }

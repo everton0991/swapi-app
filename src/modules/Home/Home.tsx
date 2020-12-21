@@ -1,6 +1,8 @@
 import React from 'react';
 
-import { MainContainer, Grid, Tipography, Button } from '../../components';
+import {
+  MainContainer, Grid, Tipography, Button
+} from '../../components';
 
 const Home = () => (
   <MainContainer>

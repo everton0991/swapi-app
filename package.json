@@ -2,6 +2,7 @@
   "name": "marvin-web",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://everton0991.github.io/swapi-app",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^10.4.8",
@@ -14,6 +15,7 @@
     "@types/react-router-dom": "^5.1.6",
     "@types/styled-components": "^5.1.2",
     "axios": "^0.21.0",
+    "gh-pages": "^3.1.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-icons": "^4.1.0",
@@ -31,7 +33,9 @@
     "test": "react-scripts test",
     "test:staged": "yarn jest ----passWithNoTests",
     "eject": "react-scripts eject",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx --fix"
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"

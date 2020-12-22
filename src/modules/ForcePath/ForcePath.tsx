@@ -1,4 +1,4 @@
-import React, { useEffect, useCallback, Suspense } from 'react';
+import React, { useEffect, useCallback } from 'react';
 import { ThemeProvider } from 'styled-components';
 import { useHistory } from 'react-router-dom';
 import { connect } from 'react-redux';
@@ -21,10 +21,15 @@ import LukeSkywalker from '../../assets/images/luke-skywalker.png';
 
 interface ForcePathProps {
   masterName: string;
+  isLoading: boolean;
   onFetchMaster: () => void;
 }
 
-const ForcePath: React.FC<ForcePathProps> = ({ masterName, onFetchMaster }) => {
+const ForcePath: React.FC<ForcePathProps> = ({
+  masterName,
+  isLoading,
+  onFetchMaster
+}) => {
   const history = useHistory();
 
   const isDarkTheme = masterName === 'Darth Vader';
@@ -39,39 +44,38 @@ const ForcePath: React.FC<ForcePathProps> = ({ masterName, onFetchMaster }) => {
 
   return (
     <ThemeProvider theme={isDarkTheme ? darkTheme : lightTheme}>
-      <Suspense fallback={<ScreenLoader />}>
+      {isLoading && <ScreenLoader />}
+
+      {masterName && (
         <PageWrapper>
           <>
             <TopBar onClick={handleGoBack} />
 
             <MainContainer>
-              <>
-                <Grid bottomSpacing="small">
-                  <Button textSize="small" onClick={handleNewPath}>
-                    Choose your path again, Padawan
-                  </Button>
-                </Grid>
+              <Grid bottomSpacing="small">
+                <Button textSize="small" onClick={handleNewPath}>
+                  Choose your path again, Padawan
+                </Button>
+              </Grid>
 
-                <Grid bottomSpacing="small">
-                  <Avatar uri={isDarkTheme ? DarthVader : LukeSkywalker} />
-                </Grid>
+              <Avatar uri={isDarkTheme ? DarthVader : LukeSkywalker} />
 
-                <Grid bottomSpacing="small">
-                  <Tipography variant="heading">
-                    Your master is <strong>{masterName}</strong>
-                  </Tipography>
-                </Grid>
-              </>
+              <Grid bottomSpacing="small">
+                <Tipography variant="heading">
+                  Your master is <strong>{masterName}</strong>
+                </Tipography>
+              </Grid>
             </MainContainer>
           </>
         </PageWrapper>
-      </Suspense>
+      )}
     </ThemeProvider>
   );
 };
 
 const mapStateToProps = (state: any) => ({
-  masterName: state.master.name
+  masterName: state.master.name,
+  isLoading: state.isLoading
 });
 
 const mapDispatchToProps = {

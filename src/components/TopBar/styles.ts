@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import { MdArrowBack } from 'react-icons/md';
 
 export const Wrapper = styled.div`
-  width: 100%;
   height: 70px;
   margin: 0;
   padding: 45px;

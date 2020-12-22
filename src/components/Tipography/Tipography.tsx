@@ -1,6 +1,8 @@
 import React from 'react';
 
-import { Heading, Body, VariantTypes, TextSizeTypes } from './styles';
+import {
+  Heading, Body, VariantTypes, TextSizeTypes
+} from './styles';
 
 interface TipographyTypes {
   children: any;

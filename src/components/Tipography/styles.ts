@@ -13,6 +13,14 @@ export const Heading = styled('h1')<TipographyTypes>`
   font-size: ${({ textSize }) => (textSize === 'regular' ? '36px' : '72px')};
   line-height: 88px;
   margin: 0;
+  padding: 10px 30px;
+  text-align: center;
+
+  @media (max-width: 768px) {
+    max-width: 302px;
+    font-size: 36px;
+    line-height: 44px;
+  }
 `;
 
 export const Body = styled('p')<TipographyTypes>`

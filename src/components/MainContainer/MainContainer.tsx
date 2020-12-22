@@ -3,7 +3,7 @@ import React from 'react';
 import { Wrapper } from './styles';
 
 interface MainContainerTypes {
-  children: React.ReactElement | string;
+  children: any;
 }
 
 const MainContainer: React.FC<MainContainerTypes> = ({ children }) => (

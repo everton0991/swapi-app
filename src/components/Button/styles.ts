@@ -22,6 +22,12 @@ export const ButtonComponent = styled('button')<ButtonTypes>`
   transition: all ease 0.5s;
   cursor: pointer;
 
+  &:hover {
+    box-shadow: 1px 1px 10px 0px rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 1px 1px 10px 0px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 1px 1px 10px 0px rgba(0, 0, 0, 0.5);
+  }
+
   &:active {
     opacity: 0.7;
   }

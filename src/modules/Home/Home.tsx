@@ -21,23 +21,25 @@ const Home = () => {
 
   return (
     <ThemeProvider theme={defaultTheme}>
-      <PageWrapper>
+      <PageWrapper topSpacing>
         <MainContainer>
-          <>
-            <Grid bottomSpacing="large">
-              <>
-                <Tipography textSize="large" variant="heading">
-                  Welcome to <strong>iClinic</strong>
-                </Tipography>
+          <Grid bottomSpacing="small">
+            <>
+              <Grid bottomSpacing="large">
+                <>
+                  <Tipography textSize="large" variant="heading">
+                    Welcome to <strong>iClinic</strong>
+                  </Tipography>
 
-                <Tipography>FRONTEND CHALLENGE</Tipography>
-              </>
-            </Grid>
+                  <Tipography>FRONTEND CHALLENGE</Tipography>
+                </>
+              </Grid>
 
-            <Button textSize="regular" onClick={handleClick}>
-              START
-            </Button>
-          </>
+              <Button textSize="regular" onClick={handleClick}>
+                START
+              </Button>
+            </>
+          </Grid>
         </MainContainer>
       </PageWrapper>
     </ThemeProvider>

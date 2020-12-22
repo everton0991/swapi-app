@@ -1,5 +1,8 @@
 import axios from 'axios';
 
 export default axios.create({
-  baseURL: 'http://swapi.dev/api/'
+  baseURL: 'https://swapi.dev/api/',
+  headers: {
+    'Content-Type': 'application/json'
+  }
 });

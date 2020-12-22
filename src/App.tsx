@@ -1,28 +1,17 @@
 import React from 'react';
-import { ThemeProvider } from 'styled-components';
-import * as S from './styles';
+import { Provider } from 'react-redux';
+
+import store from './store/createStore';
+import { Router } from './routes';
+import { GlobalStyle } from './theme';
 
 function App() {
   return (
-    <ThemeProvider theme={{}}>
-      <S.App>
-        <S.AppHeader>
-          <p>
-            Edit
-            <code>src/App.tsx</code>
-            and save to reload.
-          </p>
+    <Provider store={store}>
+      <GlobalStyle />
 
-          <S.AppLink
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </S.AppLink>
-        </S.AppHeader>
-      </S.App>
-    </ThemeProvider>
+      <Router />
+    </Provider>
   );
 }
 

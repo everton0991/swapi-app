@@ -1,15 +1,17 @@
 import React from 'react';
-import { ThemeProvider } from 'styled-components';
+import { Provider } from 'react-redux';
+
+import store from './store/createStore';
 import { Router } from './routes';
 import { GlobalStyle } from './theme';
 
 function App() {
   return (
-    <ThemeProvider theme={{}}>
+    <Provider store={store}>
       <GlobalStyle />
 
       <Router />
-    </ThemeProvider>
+    </Provider>
   );
 }
 

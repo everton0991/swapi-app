@@ -2,7 +2,8 @@
   "root": true,
   "extends": ["airbnb-typescript"],
   "parserOptions": {
-    "project": "./tsconfig.json"
+    "project": "./tsconfig.json",
+    "extraFileExtensions": [".png", ".svg"]
   },
   "rules": {
     "comma-dangle": ["error", "never"],
@@ -10,6 +11,7 @@
     "import/extensions": 0,
     "react/require-default-props": 0,
     "react/prop-types": 0,
-    "react/jsx-one-expression-per-line": 0
+    "react/jsx-one-expression-per-line": 0,
+    "implicit-arrow-linebreak": 0
   }
 }

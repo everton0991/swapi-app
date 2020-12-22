@@ -1,25 +1,47 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
+import { ThemeProvider } from 'styled-components';
+
+import { defaultTheme } from '../../theme';
 
 import {
-  MainContainer, Grid, Tipography, Button
+  PageWrapper,
+  MainContainer,
+  Grid,
+  Tipography,
+  Button
 } from '../../components';
 
-const Home = () => (
-  <MainContainer>
-    <>
-      <Grid bottomSpacing="large">
-        <>
-          <Tipography variant="heading">
-            Welcome to <strong>iClinic</strong>
-          </Tipography>
+const Home = () => {
+  const history = useHistory();
 
-          <Tipography>FRONTEND CHALLENGE</Tipography>
-        </>
-      </Grid>
+  const handleClick = () => {
+    history.push('your-chosed-path');
+  };
 
-      <Button onClick={() => {}}>START</Button>
-    </>
-  </MainContainer>
-);
+  return (
+    <ThemeProvider theme={defaultTheme}>
+      <PageWrapper>
+        <MainContainer>
+          <>
+            <Grid bottomSpacing="large">
+              <>
+                <Tipography textSize="large" variant="heading">
+                  Welcome to <strong>iClinic</strong>
+                </Tipography>
+
+                <Tipography>FRONTEND CHALLENGE</Tipography>
+              </>
+            </Grid>
+
+            <Button textSize="regular" onClick={handleClick}>
+              START
+            </Button>
+          </>
+        </MainContainer>
+      </PageWrapper>
+    </ThemeProvider>
+  );
+};
 
 export default Home;

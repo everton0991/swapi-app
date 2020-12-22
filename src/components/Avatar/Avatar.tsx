@@ -1,13 +1,15 @@
 import React from 'react';
 
-import { Wrapper } from './styles';
+import { Container, Image } from './styles';
 
 interface AvatarTypes {
-  children: React.ReactChildren | string;
+  uri: string;
 }
 
-const Avatar: React.FC<AvatarTypes> = ({ children }) => (
-  <Wrapper>{children}</Wrapper>
+const Avatar: React.FC<AvatarTypes> = ({ uri }) => (
+  <Container>
+    <Image src={uri} />
+  </Container>
 );
 
 export default Avatar;
